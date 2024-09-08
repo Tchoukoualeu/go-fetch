@@ -22,7 +22,10 @@ func worker(id int, jobs <-chan string, results chan<- string) {
 			results <- fmt.Sprintf("Worker %d failed reading response body from %s: %v", id, url, err)
 			continue
 		}
-		results <- fmt.Sprintf("Worker %d completed fetching %s, length: %d", id, url, len(body))
+
+		str := string(body)
+
+		results <- fmt.Sprintf("Worker %d completed fetching %s, length: %d", id, url, len(str))
 	}
 }
 
