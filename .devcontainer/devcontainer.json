@@ -1,0 +1,21 @@
+{
+  "name": "Go Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/go:1.22",
+  "forwardPorts": [
+    8080
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "go.useLanguageServer": true,
+        "go.inferGopath": true
+      },
+      "extensions": [
+        "golang.Go",
+        "ms-vscode.go",
+        "vscode-icons-team.vscode-icons"
+      ]
+    }
+  },
+  "postCreateCommand": "go mod tidy"
+}
